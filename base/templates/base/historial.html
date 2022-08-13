@@ -1,0 +1,54 @@
+{% extends 'base/main.html' %}
+{% block title %}Historial de tareas{% endblock %}
+
+{% block content %}
+
+<h1 class="display-2 fw-bold text-center mt-4">HISTORIAL DE TAREAS</h1>
+<div class="row mt-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form class="d-flex" action="" method="GET" >
+            <input class="form-control me-2" type="text" name="search-area" placeholder="Buscar tarea" aria-label="Buscar tarea" autocomplete="off">
+        
+            <input type="submit" value="Buscar" class="btn btn-dark fw-bold">
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+    
+</div>
+<div class="row m-3">
+    {% if tasks %}
+    {% for task in tasks %}
+    <div class="col-md-4">
+        <div class="card text-center m-3 fondo2">
+            <div class="card-header fw-bold">
+                <h4 class="text-dark">{{task.title| title}}</h4>
+            </div>
+            {% if task.description %}
+            <ul class="list-group">
+                <li class="list-group-item fondo2">{{task.description}}</li>
+            {% endif %}
+                <li class="list-group-item fondo2">
+                    <a href="{% url 'update' task.id %}"><button class="btn btn-dark fw-bold mx-2">Editar</button></a>
+                    <a href="{% url 'delete' task.id %}"><button class="btn btn-danger fw-bold">Eliminar</button></a>
+                </li>
+            </ul>
+            <div class="card-footer subtitulo fw-bold">
+              Creada: {{task.created|date:"d M Y"}}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h2 class="fw-bold text-center texto" >No se ha encontrado ninguna tarea.</h2>
+        <div class="container-fluid d-flex justify-content-center">
+            <img src="../../static/base/img/null.jpg" class="img-fluid p-4">
+        </div>
+    {% endif %}
+</div>
+
+<div class="container-fluid text-center my-5 pt-5">
+    <a href="{% url 'index' %}"><h2 class="display-1 fw-bold texto"><em>Task Center</em></h2></a>
+</div>
+
+{% endblock %}

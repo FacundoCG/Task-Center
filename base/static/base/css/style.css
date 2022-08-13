@@ -1,0 +1,52 @@
+body{
+    background-color: #001427;
+    position: relative;
+    padding-bottom: 4em;
+    min-height: 100vh;
+}
+
+
+h1{
+    color: #708D81;
+}
+
+h5, p{
+    color: #F4D58D;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.subtitulo{
+    color: #8D0801;
+}
+
+.texto{
+    color: #FBAB7E;
+    color: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    font-family: 'Pacifico', cursive;
+}
+
+.color{
+    color: #001427;
+}
+
+.fondo{
+    background-color: #708D81;
+    border-color: #708D81;
+}
+
+.fondo2{
+    background-color: #F4D58D;
+}
+
+#txt {
+    display: block;
+    height: 2vh;
+    width: 100%;
+    overflow: hidden;
+}
+

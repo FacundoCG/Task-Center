@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/base/css/style.css">
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <nav class="nav navbar-expand-lg mt-4 mx-3 dropdown">
+        <button class="btn btn-light dropdown-toggle icono" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="img-fluid" src="../../static/base/img/user.svg" height="40" width="40"></button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+    {% endif %}
+
+    {%block content %}{% endblock %}
+    
+    
+    <footer class="d-flex justify-content-center bg-dark">
+        <p class="fw-bold m-2" style="color: #F4D58D; ">Página creada por: Facundo Coronel</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="../../static/base/js/code.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
