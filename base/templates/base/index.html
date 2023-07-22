@@ -1,4 +1,6 @@
 {% extends 'base/main.html' %}
+{% load static %}
+
 {% block title %}Task Center{% endblock %}
 
 {% block content %}
@@ -48,7 +50,7 @@
         {% else %}
         <h2 class="fw-bold text-center texto" >No se ha encontrado ninguna tarea.</h2>
         <div class="container-fluid d-flex justify-content-center">
-            <img src="../../static/base/img/null.jpg" class="img-fluid p-4">
+            <img src="{% static 'base/img/null.jpg' %}" class="img-fluid p-4">
         </div>
         {% endif %}
 
