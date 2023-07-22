@@ -1,0 +1,6 @@
+env/
+task-center/__pycache__
+base/__pycache__
+db.sqlite3
+
+
