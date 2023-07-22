@@ -26,7 +26,7 @@
             </div>
             {% if task.description %}
             <ul class="list-group">
-                <li class="list-group-item fondo2">{{task.description}}</li>
+                <li class="list-group-item fw-bold fondo2">{{task.description}}</li>
             {% endif %}
                 <li class="list-group-item fondo2">
                     <a href="{% url 'update' task.id %}"><button class="btn btn-dark fw-bold mx-2">Editar</button></a>
@@ -47,8 +47,6 @@
     {% endif %}
 </div>
 
-<div class="container-fluid text-center my-5 pt-5">
-    <a href="{% url 'index' %}"><h2 class="display-1 fw-bold texto"><em>Task Center</em></h2></a>
-</div>
+{% include 'base/includes/footer.html' %}
 
 {% endblock %}

@@ -3,24 +3,21 @@
 
 {% block content %}
 
-<body style="background-color: #001427;">
-    <h1 class="display-2 fw-bold text-center mt-4" style="color: #708D81;">ELIMINAR TAREA</h1>
-    <div class="container-fluid d-flex justify-content-center mt-5">
-        <form method="POST">
-            {% csrf_token %}
-            <h4 class="fw-bold" style="color: #F4D58D;">¿Quieres eliminar la tarea? "{{task}}"</h4>
-            <span class="d-flex justify-content-center mt-3 pt-3">
-                <input class="btn btn-danger btn-lg fw-bold mx-4" type="submit" value="Confirmar"/>
-                <button type ="button" class="btn btn-dark btn-lg fw-bold" onclick="window.history.go(-1);" >Regresar</button>
-            </span>
-        </form>
-    </div>
-     
-    <div class="container-fluid text-center my-5 pt-5 pb-4">
-        <a href="{% url 'index' %}" style="color: #FBAB7E; text-decoration: none; color: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)"><h2 class="display-1 fw-bold texto" style="font-family: 'Pacifico', cursive;"><em>Task Center</em></h2></a>
-    </div>
+<h1 class="display-2 fw-bold text-center mt-4" style="color: #708D81;">ELIMINAR TAREA</h1>
 
-</body>
+<div class="container-fluid d-flex justify-content-center mt-5">
+    <form method="POST">
+        {% csrf_token %}
+        <h4 class="fw-bold" style="color: #F4D58D;">¿Quieres eliminar la tarea? "{{task}}"</h4>
+        <span class="d-flex justify-content-center mt-3 pt-3">
+            <input class="btn btn-danger btn-lg fw-bold mx-4" type="submit" value="Confirmar"/>
+            <button type ="button" class="btn btn-dark btn-lg fw-bold" onclick="window.history.go(-1);" >Regresar</button>
+        </span>
+    </form>
+</div>
+
+{% include 'base/includes/footer.html' %}
+
 
 {% endblock %}
 

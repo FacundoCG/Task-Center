@@ -26,6 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY','django-insecure-_jj1zsr1#g21-ck3j=es$)
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['http://facundocg.pythonanywhere.com/']
 
 
 # Application definition

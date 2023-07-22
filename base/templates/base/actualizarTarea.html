@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<body style="background-color: #001427;">
-    <h1 class="display-2 fw-bold text-center mt-4" style="color: #708D81;">EDITAR TAREA</h1>
+<h1 class="display-2 fw-bold text-center mt-4" style="color: #708D81;">EDITAR TAREA</h1>
+
 <div class="container-fluid d-flex justify-content-center mt-4">
     <div class="col-md-5">
         <form class="fondo2 p-3 rounded" method='POST' action="" style="background-color: #F4D58D;">
@@ -33,13 +33,7 @@
     
 </div>
 
-
-<div class="container-fluid text-center my-5 pt-5">
-    <a href="{% url 'index' %}" style="color: #FBAB7E; text-decoration: none; color: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)"><h2 class="display-1 fw-bold texto" style="font-family: 'Pacifico', cursive;"><em>Task Center</em></h2></a>
-</div>
-
-
-</body>
+{% include 'base/includes/footer.html' %}
 
 
 {% endblock %}

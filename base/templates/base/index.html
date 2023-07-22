@@ -18,7 +18,6 @@
                     <h4 class="text-dark">Tus últimas cinco tareas:</h4>
                 </div>
                 <ul class="list-group fondo2">
-                    {% if lleno %}
                     {% for task in guia %}
                     {% if task.complete %}
                     <li class="list-group-item fondo2 fw-bold d-flex justify-content-center">
@@ -34,27 +33,8 @@
                             <img class="p-1" src="../../static/base/img/circle.svg" class="img-fluid">
                         </a>
                     </li>
-                    {% endif %}                    
+                    {% endif %}
                     {% endfor %}
-                    {% else %}
-                    {% for task in tasks %}
-                    {% if task.complete %}
-                    <li class="list-group-item fondo2 fw-bold d-flex justify-content-center">
-                        <a href="{% url 'update' task.id %}" style="color: #001427;">
-                            {{task.title}}
-                            <img class="p-1" src="../../static/base/img/check-circle.svg" class="img-fluid">
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="list-group-item fondo2 fw-bold d-flex justify-content-center">
-                        <a href="{% url 'update' task.id %}" style="color: #001427;">
-                            {{task.title}}
-                            <img class="p-1" src="../../static/base/img/circle.svg" class="img-fluid">
-                        </a>
-                    </li>
-                    {% endif %}                    
-                    {% endfor %}
-                    {% endif%}
                 </ul>
                    
                 <div class="card-footer text-muted fw-bold fondo2">
@@ -81,12 +61,6 @@
     <a href='{% url "historial" %}'><button class="btn btn-lg btn-dark fw-bold">Historial de tareas</button></a>
 </div>
 
-<div class="container-fluid text-center my-5 pt-3 pb-2">
-    <a href="{% url 'index' %}"><h2 class="display-1 fw-bold texto"><em>Task Center</em></h2></a>
-</div>
+{% include 'base/includes/footer.html' %}
 
 {% endblock %}
-
-
-    <!-- <a href='{% url "login" %}'>Login</a>
-    <a href='{% url "logout" %}'>Logout</a> -->
